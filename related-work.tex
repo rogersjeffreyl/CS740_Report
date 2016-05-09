@@ -1,0 +1,23 @@
+\section{{\secit Related Work}}
+ General aspects of adblocking have been discussed in various studies. These studies have focussed on economic impact that adblockers have on advertising.  \cite{DigitalTrends} suggests that adblock railroads publishers and content providers to pay for their sites to be whitelisted.
+<report> suggest that
+in their report estimate the number of adblockusers at 2014 to be 144 million. They also
+\cite{pujol2015annoyed} describe a method of classifying ad traffic by leveraging adblock plus. They use libadblock plus to classify the web traffic based on hits from the easylist and the whitelist. They also note that it is not possible to associate HTTP traffic with ad objects and that information is needed about the structure of the web page to achieve higher accuracy in detection of ad traffic. Finally, they establish that it is not possible to identify hidden ads without knowledge of the html page content.
+By aiming to look at whether advertisements are acceptable or not, we are not just dealing with fraudulent ads that are propagated across the Internet, but also ads that a user would perceive as annoying or intrusive. In our process of understaning what an acceptable ad is, we look into existing definitions of what it means to be an acceptable advertisement.
+\cite{walls2015measuring} describe criteria for an acceptable ad as defined by Adblock plus:
+\begin{itemize}
+\item Advertisements cannot contain animations, sounds, or "attention grabbing" images.
+\item Advertisements cannot obscure page content or obstruct reading flow, i\.e\., the ad cannot be placed in the middle of a block
+of text.
+\item Advertisements must be clearly distinguished from the page
+content and must be labeled using the word "advertisement"
+or equivalent terms.
+\item Banner advertisements should not force the user to scroll
+down to view page content.
+\cite{walls2015measuring} further present a comprehensive study of adblock plus and  an analysis of how the users perceive acceptable ads. They report that $ 90 \% $ of the users viewing an all grid layout ads could not distinguish them from the content. Allowing this ads thus seems to be in conflict with adblocks acceptable ads policies.
+\end{itemize}
+
+Furthermore , in their analysis of PPV networks \cite{springborn2013impression} describe a viewport size filter mechanism (a viewport is the user's visible area of a web page) for detecting ad views that are too small to be seen by the user.
+
+It can be clearly seen that the html content of the web page has a ton of information that can be used to characterize the nature of the ad being displayed in the web page.
+We thus concentrate our discussion on analysis of web page structure to detect and redefine unacceptable ads.

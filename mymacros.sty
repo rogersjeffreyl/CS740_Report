@@ -1,0 +1,152 @@
+\usepackage{epsfig}
+\usepackage{here}
+\usepackage{url}
+\usepackage{color}
+\newcommand{\reminder}[1]{\textcolor{blue}{\em $\rightarrow$ (#1) $\leftarrow$}}
+
+\newcommand{\eat}[1]{}
+
+\newcommand{\onecolfigure}[3]{
+\begin{figure}[t]
+\centering
+\centerline{\epsfxsize=\columnwidth \epsffile{#1}}
+\vspace*{-.5em}
+\centerline{\parbox{\columnwidth}{\caption{#2} \label{#3}}}
+\vspace*{-.8em}
+\end{figure}}
+
+\newcommand{\twoupdowncolfigure}[4]{
+\begin{figure}[t!]
+\centering
+\centerline{\epsfxsize=\columnwidth \epsffile{#1}}
+\centerline{
+            \hfill
+            \parbox{\columnwidth}{\center{(a)}}
+            \hfill
+           }
+
+\centerline{\epsfxsize=\columnwidth \epsffile{#2}}
+\vspace*{-.5em}
+\centerline{
+            \hfill
+            \parbox{\columnwidth}{\center{(b)}}
+            \hfill
+           }
+\centerline{\parbox{\columnwidth}{\caption{#3} \label{#4}}}
+\vspace*{-1.2em}
+\end{figure}}
+
+
+\newcommand{\onelargefigure}[3]{
+\begin{figure*}[tbp]
+\centering
+\centerline{\epsfxsize=2\columnwidth \epsffile{#1}}
+\vspace*{-1.5em}
+\centerline{\parbox{2\columnwidth}{\caption{#2} \label{#3}}}
+\end{figure*}}
+
+\newcommand{\threelargefigure}[5]{
+\begin{figure*}[t]
+\centering
+\centerline{\epsfxsize=1.5\columnwidth \epsffile{#1}}
+\vspace*{-1.5em}
+\centerline{
+            \hfill
+            \parbox{\columnwidth}{\center{(a)}}
+            \hfill
+           }
+\vspace*{-1.5em}
+\centerline{\epsfxsize=1.5\columnwidth \epsffile{#2}}
+\vspace*{-1.5em}
+\centerline{
+            \hfill
+            \parbox{\columnwidth}{\center{(b)}}
+            \hfill
+           }
+\vspace*{-1.5em}
+\centerline{\epsfxsize=1.5\columnwidth \epsffile{#3}}
+\vspace*{-1.5em}
+\centerline{
+            \hfill
+            \parbox{\columnwidth}{\center{(c)}}
+            \hfill
+           }
+
+\centerline{\parbox{2\columnwidth}{\caption{#4} \label{#5}}}
+\end{figure*}}
+
+
+\newcommand{\onecolfigurecrunch}[3]{
+\begin{figure}[tbp]
+\centering
+\centerline{\epsfxsize=.66\columnwidth \epsffile{#1}}
+\vspace*{-1.5em}
+\centerline{\parbox{\columnwidth}{\caption{#2} \label{#3}}}
+\vspace*{-1.5em}
+\end{figure}}
+
+\newcommand{\threefigures}[5]{
+\begin{figure*}[tp]
+\centerline{
+            \hfill
+            \epsfxsize=.66\columnwidth \epsffile{#1}
+            \hfill
+            \epsfxsize=.66\columnwidth \epsffile{#2}
+            \hfill
+            \epsfxsize=.66\columnwidth \epsffile{#3}
+            \hfill
+           }
+\centerline{
+            \hfill
+            \parbox{.66\columnwidth}{\center{(a)}}
+            \hfill
+            \hfill
+            \parbox{.66\columnwidth}{\center{(b)}}
+            \hfill
+            \hfill
+            \parbox{.66\columnwidth}{\center{(c)}}
+            \hfill
+           }
+\centerline{
+            \parbox{2\columnwidth}{\caption{#4}\label{#5}}
+}
+\vspace*{-1em}
+\end{figure*}
+}
+\newcommand{\fourfigures}[6]{
+\begin{figure*}[tb]
+\centerline{
+            \hfill
+            \epsfxsize=.75\columnwidth \epsffile{#1}
+            \hfill
+            \epsfxsize=.75\columnwidth \epsffile{#2}
+            \hfill
+}
+\centerline{
+            \hfill
+            \parbox{\columnwidth}{\center{(a)}}
+            \hfill
+            \parbox{\columnwidth}{\center{(b)}}
+            \hfill
+           }
+
+\centerline{
+            \hfill
+            \epsfxsize=.75\columnwidth \epsffile{#3}
+            \hfill
+            \epsfxsize=.75\columnwidth \epsffile{#4}
+            \hfill
+           }
+\centerline{
+            \hfill
+            \parbox{\columnwidth}{\center{(c)}}
+            \hfill
+\parbox{\columnwidth}{\center{(d)}}
+            \hfill
+           }
+\centerline{
+            \parbox{2\columnwidth}{\caption{#5}\label{#6}}
+}
+\vspace*{-1em}
+\end{figure*}
+}

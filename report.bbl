@@ -1,0 +1,44 @@
+\begin{thebibliography}{1}
+
+\bibitem{CommonCrawl}
+C.~Crawl.
+\newblock {Common Crawl}, 2011.
+\newblock \url{https://commoncrawl.org/}.
+
+\bibitem{crussell2014madfraud}
+J.~Crussell, R.~Stevens, and H.~Chen.
+\newblock Madfraud: Investigating ad fraud in android applications.
+\newblock In {\em Proceedings of the 12th Annual International Conference on
+  Mobile Systems, Applications, and Services}, pages 123--134. ACM, 2014.
+
+\bibitem{DigitalTrends}
+DigitalTrends.
+\newblock {Adblock plus accused of shaking down websites.}, 2014.
+\newblock
+  \url{http://www.digitaltrends.com/web/adblock-plus-accused-of-shaking-down-websites/}.
+
+\bibitem{PeterLowe2013}
+P.~Lowe.
+\newblock {Peter Lowe. Ad blocking with ad server hostnames and IP addresses.},
+  2013.
+\newblock
+  \url{https://blog.pagefair.com/2015/google-losing-billions-adblock-devils-deal/}.
+
+\bibitem{pujol2015annoyed}
+E.~Pujol, O.~Hohlfeld, and A.~Feldmann.
+\newblock Annoyed users: Ads and ad-block usage in the wild.
+\newblock In {\em Proceedings of the 2015 ACM Conference on Internet
+  Measurement Conference}, pages 93--106. ACM, 2015.
+
+\bibitem{springborn2013impression}
+K.~Springborn and P.~Barford.
+\newblock Impression fraud in on-line advertising via pay-per-view networks.
+\newblock In {\em USENIX Security}, pages 211--226, 2013.
+
+\bibitem{walls2015measuring}
+R.~J. Walls, E.~D. Kilmer, N.~Lageman, and P.~D. McDaniel.
+\newblock Measuring the impact and perception of acceptable advertisements.
+\newblock In {\em Proceedings of the 2015 ACM Conference on Internet
+  Measurement Conference}, pages 107--120. ACM, 2015.
+
+\end{thebibliography}

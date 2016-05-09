@@ -1,0 +1,38 @@
+\section{Methodology}
+We give an outline of the questions that we attempt to answer, and then elaborate:
+\begin{itemize}
+\item [Q1.] How to detect if an ad violates the current characteristics of an acceptable ad?
+\item [Q2.] How do we classify if an ad is intrusive or not? \item [Q3.] Can an ad be annoying or intrusive even after satisying all these four criteria?
+\item [Q4.] Also, based on classification of ads as annoying or intrusive, can we then detect some common patterns in the web pages that are deemed non-acceptable?
+\item [Q5.] If so, can this be used to refine the notion of an acceptable ad?
+\end{itemize}
+
+Note that we term 'unacceptable' ads as ads that don't follow the criteria for acceptable ads as well as ads that could be considered annoying or intrusive even if they satisfy the 4 characteristics.
+\begin{enumerate}
+ \item One way to answer Q1 is to look at the working of existing ad blockers and see if they are able to perfectly predict whether an ad violates the current notions of acceptability.
+
+ We start by looking at Adblock Plus - how does it deal with acceptable ads.
+ All the current criteria for acceptable ads involve the page structure, and this implies that AdBlock Plus must have some way of analyzing the DOM structure of the web page content. Thus, a critical step is the analysis of the AdBlock Plus code. We then check if:
+
+ (a) Does adblock Plus block ads even if they satisfy the four criteria?
+
+ (b) Does Adblock Plus allow ads even if they do not satisfy the four criteria ?
+
+ While ideally (a) or (b) should not happen, there might still be some exceptions. Such exceptions provide scope for improvement or refinement of the criteria used to identify acceptable ads.
+
+ \item The next step is to obtain the data -  this can be done by crawling the pages that contain annoying or intrusive ads and then storing the web page contents, and the same for the pages without these ads. For obtaining the data, we crawl through the ad servers domain list that is obtainable from lists \cite{CommonCrawl} \cite{crussell2014madfraud} \cite{PeterLowe2013}
+  A question arises here: How to obtain pages with only acceptable ads?
+  For now, a simple way to look at acceptable ads is to consider that all ads blocked by the AdBlockPlus plugin as unacceptable, and the ones permitted through as acceptable. It needs to be thought of if there is a better approach.
+
+\item We now have a set of pages ,some with acceptable ads and some without. We attempt to perform the following:
+ \begin{enumerate}
+ \item We then identify characteristics of acceptable ads or unacceptable ones - there are multiple ways to evaluate this: one to Looking at the DOM structure and identify if there are common patterns between ads that are acceptable, one to crowdsource and obtain users' subjective analysis of what constitutes an acceptable ad, the other is to try to have an image of pages with acceptable and unacceptable ones and see if they have some visual similarities, or match some aesthetic criteria. we go with analysis of the dom structure, as it is an objective measure.
+ \item Given a new ad, can we then classify it as an acceptable or not? One way to do that is if we have a set of annoying and acceptable ads, given a new ad - can we classify it as acceptable or not. This looks to be a typical machine learning classification problem provided we identiy and specify the relevant features in the web page structure. This can be used to answer Q2.
+ \end{enumerate}
+
+ \item If possible, we check if we can refine the notion of an acceptable ad or not by the characteristics or modes of classification used in the previous step. That is, if we identify structural similarity with respect to acceptability, can this be exhibited as a further constraint to redefine what an acceptable ad is? This would help us answer Q3 - Q5.
+
+ One example of a criteria to determine if an ad is acceptable or not: frequency of occurrence of the ad. If the same ad is loaded every time a set of pages is viewed, will it correlate with the ad being unacceptable?
+
+ This whole process would have implications in ad fraud detection as well, as analysis of web pages would be helpful in determining ad fraud, assuming the correlation between unacceptable ads and fraudulent ads is not very low.
+\end{enumerate}

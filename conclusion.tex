@@ -1,0 +1,23 @@
+\section{Conclusion and Future work}\label{sec:conclusions}
+In our analysis, we observed that WideTable outperforms other views considered in the 
+study.
+The better performance was unaffected by the multiple memory configurations we tested 
+in our analysis. 
+
+A major takeaway in our analysis is that the cost of workload is affected significantly by 
+the disk access patterns. 
+Therefore the cost formulation should incorporate not just the buffer pool memory but 
+also query characteristics such as types of joins, I/O access patterns, disk bandwidth etc. 
+A sophisticated cost model involving the above parameters can help us in a more 
+accurate modeling of the workload. 
+
+We also feel that SSB is a simple benchmark which doesn't offer variety in terms of 
+relational operations performed in the query. 
+A complex benchmark like TPC-H should offer more challenges in analysis. 
+
+Lastly, the LP formulation should allow selection of multiple views, instead of one view 
+per workload, as it is assumed right now. 
+This will allow us to choose the best view for a given query and potentially maximizing 
+the performance gain for the workload. 
+It will also make the LP not so obvious, unlike the current LP which can be solved using a 
+simple greedy algorithm.
