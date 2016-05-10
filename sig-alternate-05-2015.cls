@@ -735,7 +735,7 @@
  \let\maketitle\relax
  \let\@maketitle\relax
  \gdef\@thanks{}\gdef\@author{}\gdef\@title{}\gdef\@subtitle{}\let\thanks\relax
- \@copyrightspace}
+ }
 
 %% CHANGES ON NEXT LINES
 \newif\if@ll % to record which version of LaTeX is in use
@@ -1606,7 +1606,6 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \ps@plain
-\baselineskip=11pt
 \let\thepage\relax % For NO page numbers - GM Nov. 30th. 1999 and July 2000
 \def\setpagenumber#1{\global\setcounter{page}{#1}}
 %\pagenumbering{arabic}  % Arabic page numbers GM July 2000
