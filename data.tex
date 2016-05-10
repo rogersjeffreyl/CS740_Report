@@ -1,0 +1,36 @@
+\section{Data}
+\begin{table}[]
+\label{tab:website}
+\begin{tabular}{|l|l|}
+\hline
+Domain         & Count of pages crawled \\ \hline
+digitalspy     & 40                     \\ \hline
+theguardian    & 40                     \\ \hline
+variety        & 39                     \\ \hline
+indiewire      & 23                     \\ \hline
+hitfix         & 20                     \\ \hline
+cinemablend    & 20                     \\ \hline
+darkhorizons   & 20                     \\ \hline
+empireonline   & 20                     \\ \hline
+eonline        & 20                     \\ \hline
+etonline       & 20                     \\ \hline
+fandango       & 20                     \\ \hline
+tmz            & 20                     \\ \hline
+flickeringmyth & 20                     \\ \hline
+goldderby      & 20                     \\ \hline
+heyuguys       & 20                     \\ \hline
+\end{tabular}
+\centering
+\caption{Top-15 Crawled Websites}
+\end{table}
+
+For our initial experiments on  undertanding the behavior of adblock we crawled webpages from  200 websites.
+These websites were picked from the  top 500 websites as ranked by Alexa ~\cite{alexa} and included sites from the following domains: sports, shopping, news.
+
+For measuring the impact of the whitelist and blacklist over time, we used the Wayback Machine from the Internet Archive ~\cite{wayback} to obtain the revisions of whitelist and blacklist from 2012 to 2016.
+There were 72 revisions in total for the whitelist and 69 revisions for the blacklist. We obtained the whitelist and blacklist at the end of each year from 2012 to 2016.
+
+To find the number of blocked elements for each filter combination, we required websites that had a relatively large number of ads.
+This was needed to obtain a clear picture of the performance of AdBlock Plus on such ad-intensive pages.
+The Newsdesk page of IMDB is a hub that links to many such websites. We crawled 1500 webpages from 130 websites.
+Table ~\ref{tab:website} lists the top-15 websites and the webpage counts.

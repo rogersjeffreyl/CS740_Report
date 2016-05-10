@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.9.8)  10 MAY 2016 00:45
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.9.8)  10 MAY 2016 05:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -431,7 +431,35 @@ Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 337.
 Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 338.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 339.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 340.
-) (./report.aux)
+)
+(/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/latex/listings/list
+ings.sty
+\lst@mode=\count124
+\lst@gtempboxa=\box32
+\lst@token=\toks35
+\lst@length=\count125
+\lst@currlwidth=\dimen132
+\lst@column=\count126
+\lst@pos=\count127
+\lst@lostspace=\dimen133
+\lst@width=\dimen134
+\lst@newlines=\count128
+\lst@lineno=\count129
+\lst@maxwidth=\dimen135
+
+(/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/latex/listings/lstm
+isc.sty
+File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+\c@lstnumber=\count130
+\lst@skipnumbers=\count131
+\lst@framebox=\box33
+)
+(/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/latex/listings/list
+ings.cfg
+File: listings.cfg 2007/02/22 1.4 listings configuration
+))
+Package: listings 2007/02/22 1.4 (Carsten Heinz)
+ (./report.aux)
 \openout1 = `report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 66.
@@ -458,17 +486,17 @@ LaTeX Font Info:    ... okay on input line 66.
 (/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/context/base/supp-p
 df.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count124
-\scratchdimen=\dimen132
-\scratchbox=\box32
-\nofMPsegments=\count125
-\nofMParguments=\count126
-\everyMPshowfont=\toks35
-\MPscratchCnt=\count127
-\MPscratchDim=\dimen133
-\MPnumerator=\count128
-\makeMPintoPDFobject=\count129
-\everyMPtoPDFconversion=\toks36
+\scratchcounter=\count132
+\scratchdimen=\dimen136
+\scratchbox=\box34
+\nofMPsegments=\count133
+\nofMParguments=\count134
+\everyMPshowfont=\toks36
+\MPscratchCnt=\count135
+\MPscratchDim=\dimen137
+\MPnumerator=\count136
+\makeMPintoPDFobject=\count137
+\everyMPtoPDFconversion=\toks37
 )
 (/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/generic/oberdiek/pd
 ftexcmds.sty
@@ -524,8 +552,10 @@ e
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
+Package caption Info: listings package is loaded.
 Package caption Info: subfigure package is loaded.
 Package caption Info: End \AtBeginDocument code.
+\c@lstlisting=\count138
 LaTeX Font Info:    Try loading font information for U+msa on input line 140.
 
 (/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/latex/amsfonts/umsa
@@ -542,44 +572,133 @@ LaTeX Font Info:    Try loading font information for U+lasy on input line 140.
 
 (/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-) (./introduction.tex) (./background.tex) (./related-work.tex
-Overfull \hbox (5.59448pt too wide) in paragraph at lines 15--1
+) (./introduction.tex
+Overfull \hbox (7.99985pt too wide) in paragraph at lines 10--11
+[]\T1/aer/m/n/9 How does whitelist-ing im-pact the num-ber of ads blocked?
+ []
+
+) (./background.tex) (./related-work.tex
+Overfull \hbox (5.59448pt too wide) in paragraph at lines 17--1
 \T1/aer/m/n/9 page from re-quest-ing a re-source , be it a web-page or javascri
 pt.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--1
+
  []
 
 [1{/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-var/fonts/map/pdftex/updma
 p/pdftex.map}
 
 
-]) (./methodology.tex [2]) (./conclusion.tex) (./report.bbl)
-[3] (./report.aux) ) 
+]) (./methodology.tex
+Overfull \hbox (59.47275pt too wide) in paragraph at lines 35--36
+[][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[2]
+Overfull \hbox (2.97812pt too wide) in paragraph at lines 70--71
+[]\T1/aer/m/n/9 We wanted to mea-sure the im-pact of the growth of whitelist
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--87
+
+ []
+
+) (./data.tex
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 2.
+
+
+Package caption Warning: \label without proper \caption on input line 3.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `tab:website' on page \thepage  undefined on input lin
+e 36.
+
+) (./results.tex [3]
+<figures/abp_filters.png, id=22, 888.31876pt x 378.41376pt>
+File: figures/abp_filters.png Graphic file (type png)
+
+<use figures/abp_filters.png>
+Package pdftex.def Info: figures/abp_filters.png used on input line 4.
+(pdftex.def)             Requested size: 252.0pt x 107.34668pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 4--6
+ [][] 
+ []
+
+<figures/growth.png, id=23, 602.25pt x 372.39125pt>
+File: figures/growth.png Graphic file (type png)
+ <use figures/growth.png>
+Package pdftex.def Info: figures/growth.png used on input line 12.
+(pdftex.def)             Requested size: 252.0pt x 155.81798pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 12--14
+ [][] 
+ []
+
+<figures/alexa_ads.png, id=25, 560.0925pt x 346.29375pt>
+File: figures/alexa_ads.png Graphic file (type png)
+
+<use figures/alexa_ads.png>
+Package pdftex.def Info: figures/alexa_ads.png used on input line 27.
+(pdftex.def)             Requested size: 252.0pt x 155.8096pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 27--29
+ [][] 
+ []
+
+<figures/exp_comparison.png, id=26, 602.25pt x 372.39125pt>
+File: figures/exp_comparison.png Graphic file (type png)
+
+<use figures/exp_comparison.png>
+Package pdftex.def Info: figures/exp_comparison.png used on input line 39.
+(pdftex.def)             Requested size: 252.0pt x 155.81798pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 39--41
+ [][] 
+ []
+
+) (./conclusion.tex) (./report.bbl [4 <./figures/abp_filters.png> <./figures/gr
+owth.png> <./figures/alexa_ads.png> <./figures/exp_comparison.png>]) [5
+
+]
+(./report.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 5245 strings out of 493629
- 77310 string characters out of 3134964
- 138544 words of memory out of 3000000
- 8404 multiletter control sequences out of 15000+200000
+ 6465 strings out of 493629
+ 95568 string characters out of 3134964
+ 157146 words of memory out of 3000000
+ 9600 multiletter control sequences out of 15000+200000
  57915 words of font info for 74 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
- 41i,11n,38p,891b,396s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/fon
-ts/enc/dvips/base/8r.enc}</afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmbx9.pfb></afs/cs.wisc.edu/s/texlive-2011/amd
-64_rhel5/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></afs/cs.wisc.ed
-u/s/texlive-2011/amd64_rhel5/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pf
-b></afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr9.pfb></afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/font
-s/type1/public/amsfonts/cm/cmsy9.pfb></afs/cs.wisc.edu/s/texlive-2011/amd64_rhe
-l5/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></afs/cs.wisc.edu/s/texl
-ive-2011/amd64_rhel5/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></afs/cs.wi
-sc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pf
-b></afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/fonts/type1/urw/times
-/utmb8a.pfb></afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/fonts/type1
-/urw/times/utmbi8a.pfb>
-Output written on report.pdf (3 pages, 125931 bytes).
+ 41i,11n,38p,891b,837s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/fonts/enc/dvips/base/
+8r.enc}</afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmbx9.pfb></afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></afs/cs.wisc.edu/s/texlive-2011/a
+md64_rhel5/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></afs/cs.wisc.ed
+u/s/texlive-2011/amd64_rhel5/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb
+></afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmsy9.pfb></afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/font
+s/type1/public/amsfonts/cm/cmti9.pfb></afs/cs.wisc.edu/s/texlive-2011/amd64_rhe
+l5/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></afs/cs.wisc.edu/s/texlive-2
+011/amd64_rhel5/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></afs/cs.wisc.ed
+u/s/texlive-2011/amd64_rhel5/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></afs/
+cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/fonts/type1/urw/times/utmbi8a
+.pfb>
+Output written on report.pdf (5 pages, 193442 bytes).
 PDF statistics:
- 55 PDF objects out of 1000 (max. 8388607)
- 39 compressed objects within 1 object stream
+ 69 PDF objects out of 1000 (max. 8388607)
+ 44 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

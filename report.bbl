@@ -1,4 +1,14 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{alexa}
+Alexa.
+\newblock {Alexa-Top 500}.
+\newblock \url{http://www.alexa.com/topsites/global;9}.
+
+\bibitem{wayback}
+I.~Archive.
+\newblock {Wayback Machine}.
+\newblock \url{https://archive.org/web/}.
 
 \bibitem{abpcrawler}
 A.~Crawler.
@@ -20,6 +30,12 @@ EasyList.
 E.~H. Helper.
 \newblock {Element Hide Helper}.
 \newblock \url{https://adblockplus.org/elemhidehelper}.
+
+\bibitem{abpmoz}
+Mozilla.
+\newblock {Mozilla Firefox Stats}.
+\newblock
+  \url{https://addons.mozilla.org/en-US/firefox/addon/adblock-plus/statistics/?last=30}.
 
 \bibitem{pujol2015annoyed}
 E.~Pujol, O.~Hohlfeld, and A.~Feldmann.
