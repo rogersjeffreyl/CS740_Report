@@ -70,7 +70,7 @@ Thus for our experiments, the configuration in step 2 alone needs to be changed.
 We wanted to measure the impact of the growth of whitelist over time. For this we used different versions of whitelists and blacklists  from  2012 to 2016. We leveraged the capability of our modified crawled to  use the different versions of whitelist and blacklists. For a given list of URLS filters corresponding to the years were applied and the number of filter matches per webpage was measured.
 
 \subsection{Measuring performance of Adblock Plus}:
-An important aspect in asnwering ~\ref{q:q1} and ~\ref{q:q4} is to see the impact of URL filters on AdBlock Plus's performance. For this purpose we  create a new version of the blacklist , containing only element hiding filters.We then measure the number of elements blocked by AdBlock Plus with three configurations of filters - the ‘normal’ AdBlock Plus with default blacklist and whitelist, only the default blacklist and the new blacklist with the  element hiding filters.
+An important aspect in asnwering ~\ref{q:q1} and ~\ref{q:q4} is to see the impact of URL filters on AdBlock Plus's performance. For this purpose we  create a new version of the blacklist , containing only element hiding filters.We then measure the number of elements blocked by AdBlock Plus with three configurations of filters: the normal AdBlock Plus with default blacklist and whitelist, only the default blacklist and the new blacklist with the  element hiding filters.
 
 A very simple measurement of the number of ads blocked is to count the number of non-null and blocking filters from the JSON file.
 However, this does not give us a correct measure of the numer of advertisements blocked.
@@ -79,7 +79,7 @@ The count of blocking filters fired is greater for AdBlock Plus with default bla
 Whereas in the case of blacklists since the number of ads  allowed is lesser that that of the  one with the whitelist there are lesser opportunities for the blocking filters to trigger.
 The actual number of elements blocked , thus has to be calculated  with reference to the number of elements in the page which would have been displayed  if there were no Adblock plus in the browser.
 
-We come  up with a simple formula that would give us the number of elements blocked:
+We come up with a simple formula that would give us the number of elements blocked:
 
 let N be the actual number of elements  in the page, without any blocking. \\
 let B be the number of elements blocked per page.\\
