@@ -42,3 +42,11 @@ As expected the easylist+whitelist combination allows more ads there by allowing
 	\label{fig:block-allow}
 	\vspace*{-0.5cm}
 \end{figure}
+
+To demonstrate how AdBlock Plus can be too restrictive in the sense of blocking elements that are not ads we set up a simple page that handles a GET request with 'admid' as a query parameter. AdBlock Plus has 'admid' in its blacklist and hence doesn't even allow the call to pass through. This is a big limitation to the pattern-matching approach to blacklisting, in that legitimate content of publishers would get to be not displayed.
+
+AdBlock Plus is not capable of finding out all elements that are ads, as well. As explained earlier, we used the bit.ly redirection URL within the page instead of the actual URL. As in the figure, the AdBlock Plus has an element hiding filter that blocks the image. It doesn't block the image underneath it, even though it refers to the same site - this can be seen in the figure (x) where no ad-blocking is applied.
+
+However, this does not work with the URL blocking filter. This is because bit.ly being a URL redirection filter, it returns the original URL which is then blocked by the URL filter. In this case, we developed a proxy site that essentially renders it as a call to a different URL. In the future work section we discuss other possible approaches as well.
+
+
