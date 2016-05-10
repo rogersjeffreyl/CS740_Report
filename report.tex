@@ -57,7 +57,12 @@
 \usepackage{cite}
 \usepackage{textcomp}
 \usepackage{amssymb}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
 
+\makeatletter
+\def\BState{\State\hskip-\ALG@thistlm}
+\makeatother
 \begin{document}
 
 % Copyright
@@ -143,6 +148,7 @@ Adblock Plus, one of the widely used ad blockers, has enumerated a set of rules 
 \keywords{Ad Fraud,Impression Fraud,Acceptable Ads}
 
 \input{introduction}
+\input{background}
 \input{related-work}
 \input{methodology}
 \input{conclusion}

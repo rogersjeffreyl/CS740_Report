@@ -1,36 +1,65 @@
 \section{Methodology}
-We investigate the working of AdBlock Plus, and see how the results it provide could give insights about ad blocking mechanisms in general. We try four different kinds of experiments to see how AdBlock Plus works:
-\begin{enumerate}
-	\item[(a)] 
+THe first step in our study was to gain insight into the working of adblock plus and the different filters it uses.
+~\cite{walls2015measuring} explain in detail about filter specification and the functionality of different kinds of filters.
+Additionally, we used a tool called the Element Hiding helper ~\cite{elemhidehelper}  to identify the correspondence between the filter and the actual web page elements displayed.
+Element Hiding Filter Helper a Firefox add-on that aids in analyzing the ads that were blocked.
+It identifies and highlights an element blocked by adblock plus, provides the content type of the element and the maching URL or element hiding filter that caused the element to be blocked.
 
-The impact of whitelists on AdBlock Plus's blocking mechanisms 
-\item [(b)]
- The change in whitelist over time
-\item[(c)]
- If we do away with the notion of lists, can we see how AdBlock Plus performs with respect to element hiding filters alone.
- \item[(d)] Fuzzing the page to prevent AdBlock Plus from recognizing the ads in the page.
+We then proceeded to examine and measure the impact of AdBlock Plus, through three different experiments:
+\begin{enumerate}
+	\item[(a)] The impact of whitelists on AdBlock Plus's blocking mechanisms
+    \item[(b)]If we do away with the notion of lists, can we see how AdBlock Plus performs with respect to element hiding filters alone.
+    \item[(c)] Fuzzing the page to prevent AdBlock Plus from recognizing the ads in the page.
 
 \end{enumerate}
 
- AdBlock Plus provides two means of configuring the whitelist and blacklist in its Options dialog -  one is to add the filters manually, the other is to provide a URL that has the list of filters. By default, the easylist.txt URL is added, and if the Acceptable Ads program is allowed, the exception\_rules.txt URL is also added.
+\subsection{Crawling}
+For our experiments we needed to examine a corpus of webpages with advertisements.
+Crawling of webpages is the standard way of obtaing the content of the webpages.
+However normal crawling of webpages would just fetch the source of the page offline and there by mask the additional communication made between the  advertisement and the adserver.
+This might result in elements  missing from the page source which would have otherwise been present if the page were online.
+This calls for a crawling mechanism which mimics the behavior of an actual browser.
+The crawler should also provide us with the capability of analyzing the DOM(Document Object Model) of the page.
 
+AdBlock Plus has developed a tool called abpcrawler ~\cite{abpcrawler} that launches a webpage in realtime.
+This tool takes in as input a list of urls to crawl. The tool launches the URLs in the browser and logs the filters,both blacklist and whitelist that had matches in the pages.
 
-Crawling and obtaining ads: The initial problem was how to get the ads from the websites, and how to get the ads that were blocked. There is a Firefox add-on called AdBlock Plus Element Hiding Helper that enables us to analyze the ads that were blocked - essentially - it marks the element as blocked, denotes the content type of the element, and provides the maching URL/hiding filter that caused it to be blocked. 
+This tool uses the Gecko layout engine of Firefox to launch the browser with a pre-specified url. This tool also
+provides the  source of a webpage in xml and also returns the visual representation of the webpage as an image.
+Additionally the tool also logs the  adblock plus filters applied to the page as a json. This allows us analyze the type of filters fired for a given webpage.
 
-This allows the user to analyze and see the format of ads that were blocked, whitelisted or hidden using element hiding filters. With this in hand, in addition we needed a new mechanism to get the ads blocked and ads shown given a page. In addition we needed a way by which we could use different configurations for whitelist, blacklist and element hiding filters and get the ad details for all the configurations. We modified the abpcrawler tool to do the same. This enhanced abpcrawler working is outlined in the following algorithm:
-1. Retrieve the list of configurations for blacklist and whitelist
-2. For each configuration in 1, do the following
-3. Launch firefox with the AdBlock Plus add-on set to the particular configuration.
-4. In JSON format, write to a file the following:
-a. The content type of the element
-b. The filter regex applied (null if no filter is applied)
-c. The location of the element within the page.
-5. Return.
+\subsection{Combination of Filter Lists}
+We also needed capabilities to specify the filter lists used by adblock plus when it examins a webpage.
+AdBlock Plus provides two means of configuring the whitelist and blacklists through it's GUI. Users  could add subscription to the filters they wanted by specifying an  URL to the filter-file.
+Additionally, an option is provided to the users for configuring adblock plus to use the whitelist, i.e acceptable ads. This option is enabled by default.
 
-Thus for our experiments, the configuration in step 2 alone needs to be changed. For example, to see the impact of the change in whitelist (a), the corresponding whitelist URL is configured, and the crawler is run. 
+The abp crawler, however, did not have means through which filter lists could be configured.
+We created Firefox profiles for this purpose, one for a particular combination of filter lists used in our experiments. Adblock plus was installed and the necessary filter lists were configured for each of the profiles.
+The abpcrawler was enhanced to use the profile information.
+This enhanced abpcrawler working is outlined in the following steps:
+\begin{algorithm}
+\caption{Crawler}\label{euclid}
+\begin{algorithmic}[1]
+\Procedure{Crawl Web pages}{}
+\State $\textit{configurations} \gets \text{various filter configurations}$
+\State $\textit{urls} \gets \text{urls to crawl}$
+\ForAll{urls}
+\ForAll{configurations}
+\State \text{Launch firefox with configuration}
+\State \text{In JSON format, write to a file the following}
+\State \textit{Content type of the element}
+\State \textit{Filter regex(null if no filter is applied)}
+\State \textit{Location of the element within the page.}
+\EndFor
+\EndFor
+\Return
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
 
+Thus for our experiments, the configuration in step 2 alone needs to be changed. For example, to see the impact of the change in whitelist, the URL corresponding to the version of whitelist is configured, and the crawler is run.
 Measuring performance of ads:
-One key aspect to measure is to see the impact of URL filters on AdBlock Plus's performance. We expose a new URL that has only the element hiding filters (a subset of easy\_list.txt) and configure it to run the crawler. We can now test the performance of AdBlock Plus with three configurations - the ‘normal’ AdBlock Plus (the default typical configuration, with Acceptable Ads enabled), EasyList alone (Acceptable Ads disabled) and Element Hiding (only element hiding filters), and measure the number of ads blocked. 
+One key aspect to measure is to see the impact of URL filters on AdBlock Plus's performance. We expose a new URL that has only the element hiding filters (a subset of easy\_list.txt) and configure it to run the crawler. We can now test the performance of AdBlock Plus with three configurations - the ‘normal’ AdBlock Plus (the default typical configuration, with Acceptable Ads enabled), EasyList alone (Acceptable Ads disabled) and Element Hiding (only element hiding filters), and measure the number of ads blocked.
 A naive measurement of the number of ads blocked is to count the number of non-null and non-allowed filters in the JSON file. This doesn’t always work - with whitelist and blacklist, the number of ads blocked shows a higher number than with only the blacklist. The reason for this is that when URLs are blocked, the call never gets through and hence the number of elements in the page is considerably less. This would mean that even though more elements are explicitly blocked, the actual number of blocked elements is higher.
 To get the actual measurement, we have a new measure, the total number of elements in the page.
 
@@ -43,9 +72,9 @@ Total blocked elements = Blocked elements in page+Effectively blocked elements.
 
 This is then repeated for multiple configurations.
 
-In addition, to check whether it is possible to circumvent the ads, we do the following:
+ To obtain an answer for \ref{q:q1} we do the following:
 Circumventing element hiding filters:
-AdBlock Plus blocks ads by looking into the blacklist and whitelist and hiding elements that are prefixed with the element hiding filter tag. This means that the blocking mechanism can be considered as a form of string matching process. Any way to circumvent the string matching process would then allow the ad to be displayed. One method we followed was to use a URL redirection filter - this would result in the element to not be blocked as the string would not be matched. 
+AdBlock Plus blocks ads by looking into the blacklist and whitelist and hiding elements that are prefixed with the element hiding filter tag. This means that the blocking mechanism can be considered as a form of string matching process. Any way to circumvent the string matching process would then allow the ad to be displayed. One method we followed was to use a URL redirection filter - this would result in the element to not be blocked as the string would not be matched.
 Blocking of Non-Ad elements
 One other experiment would be to check if elements that are not ads are blocked by AdBlock Plus
 

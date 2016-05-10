@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.9.8)  8 MAY 2016 23:41
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.9.8)  10 MAY 2016 00:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -434,26 +434,26 @@ Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 340.
 ) (./report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 61.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 61.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 66.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 66.
 
 (/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/latex/base/ts1cmr.f
 d
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    ... okay on input line 66.
 
 (/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/context/base/supp-p
 df.mkii
@@ -526,52 +526,60 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: subfigure package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+msa on input line 135.
+LaTeX Font Info:    Try loading font information for U+msa on input line 140.
 
 (/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/latex/amsfonts/umsa
 .fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 135.
+LaTeX Font Info:    Try loading font information for U+msb on input line 140.
 
 (/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/latex/amsfonts/umsb
 .fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 135.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 140.
 
 (/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-) (./introduction.tex) (./related-work.tex [1{/afs/cs.wisc.edu/s/texlive-2011/a
-md64_rhel5/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+) (./introduction.tex) (./background.tex) (./related-work.tex
+Overfull \hbox (5.59448pt too wide) in paragraph at lines 15--1
+\T1/aer/m/n/9 page from re-quest-ing a re-source , be it a web-page or javascri
+pt.
+ []
+
+[1{/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-var/fonts/map/pdftex/updma
+p/pdftex.map}
 
 
-]) (./methodology.tex
-[2]) (./conclusion.tex) (./report.bbl) [3] (./report.aux) ) 
+]) (./methodology.tex [2]) (./conclusion.tex) (./report.bbl)
+[3] (./report.aux) ) 
 Here is how much of TeX's memory you used:
- 5193 strings out of 493629
- 76659 string characters out of 3134964
- 133534 words of memory out of 3000000
- 8369 multiletter control sequences out of 15000+200000
- 45263 words of font info for 59 fonts, out of 3000000 for 9000
+ 5245 strings out of 493629
+ 77310 string characters out of 3134964
+ 138544 words of memory out of 3000000
+ 8404 multiletter control sequences out of 15000+200000
+ 57915 words of font info for 74 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
- 41i,11n,38p,891b,260s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/afs/cs.wisc.edu/s/
-texlive-2011/amd64_rhel5/texmf-dist/fonts/enc/dvips/base/8r.enc}</afs/cs.wisc.e
-du/s/texlive-2011/amd64_rhel5/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.p
-fb></afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmr9.pfb></afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmsy9.pfb></afs/cs.wisc.edu/s/texlive-2011/amd64_rh
-el5/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></afs/cs.wisc.edu/s/tex
-live-2011/amd64_rhel5/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></afs/cs.w
-isc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.p
-fb></afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/fonts/type1/urw/time
-s/utmb8a.pfb></afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/fonts/type
-1/urw/times/utmbi8a.pfb>
-Output written on report.pdf (3 pages, 98859 bytes).
+ 41i,11n,38p,891b,396s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/fon
+ts/enc/dvips/base/8r.enc}</afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmbx9.pfb></afs/cs.wisc.edu/s/texlive-2011/amd
+64_rhel5/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></afs/cs.wisc.ed
+u/s/texlive-2011/amd64_rhel5/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pf
+b></afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr9.pfb></afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/font
+s/type1/public/amsfonts/cm/cmsy9.pfb></afs/cs.wisc.edu/s/texlive-2011/amd64_rhe
+l5/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></afs/cs.wisc.edu/s/texl
+ive-2011/amd64_rhel5/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></afs/cs.wi
+sc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pf
+b></afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/fonts/type1/urw/times
+/utmb8a.pfb></afs/cs.wisc.edu/s/texlive-2011/amd64_rhel5/texmf-dist/fonts/type1
+/urw/times/utmbi8a.pfb>
+Output written on report.pdf (3 pages, 125931 bytes).
 PDF statistics:
- 47 PDF objects out of 1000 (max. 8388607)
- 33 compressed objects within 1 object stream
+ 55 PDF objects out of 1000 (max. 8388607)
+ 39 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

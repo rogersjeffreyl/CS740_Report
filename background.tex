@@ -1,0 +1,16 @@
+\section{Background}
+Adblock plus is one of the widely use adblockers.  <statistics>
+Adblock plus relies  on filter lists for  its functioning.
+The filter lists can be categorized into whitelists and blacklists.
+Blacklists contain rules for blocking advertisements whereas whitelists acts as exception for the rules that are in the blacklists.
+The rules are CSS and Xpath selectors that are prefixed with a predefined set of symbols.
+These rules interpreted as regular expressions by the adblock plus engine.
+The notation is that filters prefixed with an $"@@"$ is a whitelisting filter and  filters prefixed with $"\#\#"$
+or $\#@$  is  a blocking or blacklisting filter.
+The blocking filters can be broadly classified into:
+\begin{enumerate}
+\item Element Hiding filters
+\item URL filters
+\end{enumerate}
+Element hiding filters hide the elements present in an webpage from the user whereas the URL filters block the web page from requesting a resource , be it a webpage or javascript.
+The filters are  published and maintained by easylist~\cite{easylist}.
