@@ -1,1 +1,41 @@
 \section{Conclusion and Future work}\label{sec:conclusions}
+
+We did not set up connections with an actual ad server - in the future, that would provide more opportunities for fuzzing the page so that AdBlock Plus does not recognize them as ads.
+
+Few of our observations:
+1. The Acceptable ads criteria mention that the image should not exceed certain dimensions. However, it is not strongly enforced. Most of the filters that block images based on size are URL blocking filters. Example: http://www.prepperwebsite.com/wp-content/uploads/2014/01/JMBullion_0107_728x90.gif is blocked because the '_728x90' pattern is matched in the blacklist. It would be trivial to change the URL to reflect a different size, or no size at all, so that AdBlock Plus does not recognize it as an ad. Other examples from easylist.txt
+
+_728_x_90_
+_728by90_
+_728x-90.
+_728x150.
+_728x60.
+_728x90&
+_728x90-
+_728x90.
+
+This indicates that size is not a major factor most of the cases while blocking the elements.
+
+2. Our bit.ly shortening service worked for element hiding filters but not matching filters because of the actual redirection. Our proxy server solution could be fleshed out in a comprehensive manner (by targeted caching, for example) by the actual websites. Some other similar approaches:
+1. Have the server have a list of dynamic CNAME mappings so that it becomes difficult to track them all in the blacklist
+2. Since it matches only the URL, the server could provide the IP address instead of the DNS name. However, this removes any geo-location based ad approaches, unless the server already has location information of the client.
+
+AdBlock Plus relies on manual feedback whether the criteria are satisfied before adding the page to the non-intrusive ads list.
+Is both restrictive and incorrect. From all this, while the criteria for acceptable ads are nominal unless there is a well-established way to enforce that ads follow the criteria and automatically block ads that don't, the whitelisting and blacklisting process would continue a manual process of companies paying money to whitelist the sites, assuming the ads they serve follow the criteria for acceptable ads.
+
+
+
+It would also be interesting to see how other adblock plugins compare to AdBlock Plus in terms of blocking ads. Our initial approach was to investigate the working of AdBlock for Chrome as well. It is considered the second most popular ad block plugin after AdBlock Plus. However, it was sold and it has joined the AdBlock Plus's Acceptable ads program.
+ www.ghacks.net/2015/10/02/adblock-for-chrome-sold-joins-adblock-plus-acceptable-ads-program/, so we speculate it would have given similar results.
+ 
+ A new blocker, uBlock Origin was branched out of AdBlock Plus - not using Acceptable Ads and claims to consume lesser CPU and network traffic compared to AdBlock Plus. It would be interesting to validate those claims.
+
+The future work is interesting. Eyeo, the company behind AdBlock Plus in wake of criticism over its unwillingness to disclose the companies who have paid money, has established an independent board to oversee acceptable ads.
+
+Other avenues for compensating advertising losses to publishers are also arising. Brave, a new browser that claims to remove most intrusive ads has brought up the notion of micropayments to be used for compensation to the publishers in place of ads, via a Bitcoin based browser wallet. Recently, following the trend, AdBlock Plus teamed up with Flattr to help voluntary readers pay publishers by tracking the users' browsing activity and distributing the money based on the engagement of users with different websites.
+
+This also begs a larger question: Can there be any automatic way of determining if a blocked ad is non-intrusive or not?
+There are three possible ways: 
+Visual inspection of ads in page to see if there are simiarites, or if they violate some aesthetic criteria.
+Human labeling by crowdsourcing possibly via Amazon's Mechanical Turk and see if we can obtain users\' subjective analysis of what constitutes an acceptable ad, and looking at the DOM structure to identify common patterns between ads that are acceptable.
+
