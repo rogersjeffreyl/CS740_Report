@@ -1,38 +1,56 @@
 \section{Methodology}
-We give an outline of the questions that we attempt to answer, and then elaborate:
-\begin{itemize}
-\item [Q1.] How to detect if an ad violates the current characteristics of an acceptable ad?
-\item [Q2.] How do we classify if an ad is intrusive or not? \item [Q3.] Can an ad be annoying or intrusive even after satisying all these four criteria?
-\item [Q4.] Also, based on classification of ads as annoying or intrusive, can we then detect some common patterns in the web pages that are deemed non-acceptable?
-\item [Q5.] If so, can this be used to refine the notion of an acceptable ad?
-\end{itemize}
-
-Note that we term 'unacceptable' ads as ads that don't follow the criteria for acceptable ads as well as ads that could be considered annoying or intrusive even if they satisfy the 4 characteristics.
+We investigate the working of AdBlock Plus, and see how the results it provide could give insights about ad blocking mechanisms in general. We try four different kinds of experiments to see how AdBlock Plus works:
 \begin{enumerate}
- \item One way to answer Q1 is to look at the working of existing ad blockers and see if they are able to perfectly predict whether an ad violates the current notions of acceptability.
+	\item[(a)] 
 
- We start by looking at Adblock Plus - how does it deal with acceptable ads.
- All the current criteria for acceptable ads involve the page structure, and this implies that AdBlock Plus must have some way of analyzing the DOM structure of the web page content. Thus, a critical step is the analysis of the AdBlock Plus code. We then check if:
+The impact of whitelists on AdBlock Plus's blocking mechanisms 
+\item [(b)]
+ The change in whitelist over time
+\item[(c)]
+ If we do away with the notion of lists, can we see how AdBlock Plus performs with respect to element hiding filters alone.
+ \item[(d)] Fuzzing the page to prevent AdBlock Plus from recognizing the ads in the page.
 
- (a) Does adblock Plus block ads even if they satisfy the four criteria?
-
- (b) Does Adblock Plus allow ads even if they do not satisfy the four criteria ?
-
- While ideally (a) or (b) should not happen, there might still be some exceptions. Such exceptions provide scope for improvement or refinement of the criteria used to identify acceptable ads.
-
- \item The next step is to obtain the data -  this can be done by crawling the pages that contain annoying or intrusive ads and then storing the web page contents, and the same for the pages without these ads. For obtaining the data, we crawl through the ad servers domain list that is obtainable from lists \cite{CommonCrawl} \cite{crussell2014madfraud} \cite{PeterLowe2013}
-  A question arises here: How to obtain pages with only acceptable ads?
-  For now, a simple way to look at acceptable ads is to consider that all ads blocked by the AdBlockPlus plugin as unacceptable, and the ones permitted through as acceptable. It needs to be thought of if there is a better approach.
-
-\item We now have a set of pages ,some with acceptable ads and some without. We attempt to perform the following:
- \begin{enumerate}
- \item We then identify characteristics of acceptable ads or unacceptable ones - there are multiple ways to evaluate this: one to Looking at the DOM structure and identify if there are common patterns between ads that are acceptable, one to crowdsource and obtain users' subjective analysis of what constitutes an acceptable ad, the other is to try to have an image of pages with acceptable and unacceptable ones and see if they have some visual similarities, or match some aesthetic criteria. we go with analysis of the dom structure, as it is an objective measure.
- \item Given a new ad, can we then classify it as an acceptable or not? One way to do that is if we have a set of annoying and acceptable ads, given a new ad - can we classify it as acceptable or not. This looks to be a typical machine learning classification problem provided we identiy and specify the relevant features in the web page structure. This can be used to answer Q2.
- \end{enumerate}
-
- \item If possible, we check if we can refine the notion of an acceptable ad or not by the characteristics or modes of classification used in the previous step. That is, if we identify structural similarity with respect to acceptability, can this be exhibited as a further constraint to redefine what an acceptable ad is? This would help us answer Q3 - Q5.
-
- One example of a criteria to determine if an ad is acceptable or not: frequency of occurrence of the ad. If the same ad is loaded every time a set of pages is viewed, will it correlate with the ad being unacceptable?
-
- This whole process would have implications in ad fraud detection as well, as analysis of web pages would be helpful in determining ad fraud, assuming the correlation between unacceptable ads and fraudulent ads is not very low.
 \end{enumerate}
+
+ AdBlock Plus provides two means of configuring the whitelist and blacklist in its Options dialog -  one is to add the filters manually, the other is to provide a URL that has the list of filters. By default, the easylist.txt URL is added, and if the Acceptable Ads program is allowed, the exception\_rules.txt URL is also added.
+
+
+Crawling and obtaining ads: The initial problem was how to get the ads from the websites, and how to get the ads that were blocked. There is a Firefox add-on called AdBlock Plus Element Hiding Helper that enables us to analyze the ads that were blocked - essentially - it marks the element as blocked, denotes the content type of the element, and provides the maching URL/hiding filter that caused it to be blocked. 
+
+This allows the user to analyze and see the format of ads that were blocked, whitelisted or hidden using element hiding filters. With this in hand, in addition we needed a new mechanism to get the ads blocked and ads shown given a page. In addition we needed a way by which we could use different configurations for whitelist, blacklist and element hiding filters and get the ad details for all the configurations. We modified the abpcrawler tool to do the same. This enhanced abpcrawler working is outlined in the following algorithm:
+1. Retrieve the list of configurations for blacklist and whitelist
+2. For each configuration in 1, do the following
+3. Launch firefox with the AdBlock Plus add-on set to the particular configuration.
+4. In JSON format, write to a file the following:
+a. The content type of the element
+b. The filter regex applied (null if no filter is applied)
+c. The location of the element within the page.
+5. Return.
+
+Thus for our experiments, the configuration in step 2 alone needs to be changed. For example, to see the impact of the change in whitelist (a), the corresponding whitelist URL is configured, and the crawler is run. 
+
+Measuring performance of ads:
+One key aspect to measure is to see the impact of URL filters on AdBlock Plus's performance. We expose a new URL that has only the element hiding filters (a subset of easy\_list.txt) and configure it to run the crawler. We can now test the performance of AdBlock Plus with three configurations - the ‘normal’ AdBlock Plus (the default typical configuration, with Acceptable Ads enabled), EasyList alone (Acceptable Ads disabled) and Element Hiding (only element hiding filters), and measure the number of ads blocked. 
+A naive measurement of the number of ads blocked is to count the number of non-null and non-allowed filters in the JSON file. This doesn’t always work - with whitelist and blacklist, the number of ads blocked shows a higher number than with only the blacklist. The reason for this is that when URLs are blocked, the call never gets through and hence the number of elements in the page is considerably less. This would mean that even though more elements are explicitly blocked, the actual number of blocked elements is higher.
+To get the actual measurement, we have a new measure, the total number of elements in the page.
+
+The procedure is as follows
+Get the total number of elements in the page
+For each configuration,
+Blocked elements in page = Get the count of non-null and non-allowed filters in the page.
+Effectively blocked elements = Total number of elements (1) - Element count in page for current configuration
+Total blocked elements = Blocked elements in page+Effectively blocked elements.
+
+This is then repeated for multiple configurations.
+
+In addition, to check whether it is possible to circumvent the ads, we do the following:
+Circumventing element hiding filters:
+AdBlock Plus blocks ads by looking into the blacklist and whitelist and hiding elements that are prefixed with the element hiding filter tag. This means that the blocking mechanism can be considered as a form of string matching process. Any way to circumvent the string matching process would then allow the ad to be displayed. One method we followed was to use a URL redirection filter - this would result in the element to not be blocked as the string would not be matched. 
+Blocking of Non-Ad elements
+One other experiment would be to check if elements that are not ads are blocked by AdBlock Plus
+
+
+
+
+
+
